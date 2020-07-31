@@ -1,5 +1,5 @@
 class CashRegister
-  attr_accessor :total, :discount, :title, :price, :quantity
+  attr_accessor :total, :discount, :title, :price, :quantity, :last_total
   attr_reader :items
   
   def initialize(discount = 0)
@@ -12,6 +12,7 @@ class CashRegister
     @title = title
     @price = price
     @quantity = quantity
+    @last_total = @total
     @total = @total + @price * @quantity
     
     if @quantity > 1
